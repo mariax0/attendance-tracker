@@ -8,7 +8,7 @@ function Home() {
     const navigate = useNavigate();
 
     return (
-        <div id="content">
+        <div className="content">
             <Navbar />
             <div id="attendance">
                     <div id="headline">
