@@ -1,8 +1,15 @@
 #dropdown {
     position: absolute;
-    width: 160px;
-    right: 20px;
+    padding: 10px 10px;
+    right: 25px;
+    top: 53px;
     border: 1px solid #D9D9D9;
     user-select: none;
     background-color: #FFFFFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#dropdown p {
+    margin: 0;
 }

@@ -9,7 +9,7 @@ function RoleTab() {
     }
 
     return (
-        <div className = "role-tab">
+        <div className="role-tab">
             <div 
                 className={`tab ${selectedRole === "participant" ? "active" : ""}`}
                 onClick={() => handleSelect("participant")}

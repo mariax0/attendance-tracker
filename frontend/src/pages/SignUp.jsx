@@ -9,7 +9,7 @@ function SignUp() {
     const navigate = useNavigate();
 
     return (
-        <div id="content">
+        <div className="content" id="content-user">
             <div id="sign-in">
                 <div id="headline">
                     <div id="back">

@@ -4,13 +4,16 @@
     align-items: center;
 }
 
-#content {
+.content {
     height: 90vh;
-    margin-top: 56px;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: space-between;
+}
+
+#content-user {
+    margin-top: 56px;
 }
 
 #inputs .info {

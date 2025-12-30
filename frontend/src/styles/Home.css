@@ -1,6 +1,11 @@
-#content {
+.content {
     justify-content: start;
     gap: 40px;
+    margin: 0;
+}
+
+body {
+    margin: 0;
 }
 
 #attendance {
