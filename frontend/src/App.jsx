@@ -4,6 +4,7 @@ import SignUp from './pages/SignUp';
 import Home from './pages/Home';
 import Confirm from './pages/Confirm'
 import Confirmed from './pages/Confirmed'
+import Dashboard from './pages/Dashboard'
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
       <Route path="/home" element={<Home />}></Route>
       <Route path="/confirm" element={<Confirm />}></Route>
       <Route path="/confirmed" element={<Confirmed />}></Route>
+      <Route path="/dashboard" element={<Dashboard />}></Route>
     </Routes>
   )
 }

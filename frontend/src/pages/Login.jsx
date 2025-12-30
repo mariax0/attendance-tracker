@@ -1,4 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 import Button from "../components/Button"
 import InputField from "../components/InputField"
 import RoleTab from "../components/RoleTab"
@@ -7,6 +8,15 @@ import Logo from "../components/Logo"
 
 function Login() {
     const navigate = useNavigate();
+    const [role, setRole] = useState("participant");
+
+    const handleLogin = () => {
+        if (role === "participant") {
+            navigate("/home");
+        } else if (role === "host") {
+            navigate("/dashboard");
+        }
+    }
 
     return (
         <div className="content" id="content-user">
@@ -19,13 +29,13 @@ function Login() {
                     </div>
                 </div>
                 <div id="tabbing">
-                    <RoleTab></RoleTab>
+                    <RoleTab selectedRole={role} onChangeRole={setRole}></RoleTab>
                 </div>
                 <div id="inputs">
                     <InputField label="Email" type="email" placeholder="example@gmail.com"/>
                     <InputField label="Password" type="password" placeholder="******"/>
                     <p className="info">Forgot Password?</p>
-                    <Button text="Log in" onClick={() => navigate("/home")}></Button>
+                    <Button text="Log in" onClick={handleLogin}></Button>
                 </div>
             </div>
             <div id="sign-up">
