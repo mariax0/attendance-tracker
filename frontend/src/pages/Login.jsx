@@ -32,11 +32,14 @@ function Login() {
                 <div>
                     <RoleTab selectedRole={role} onChangeRole={setRole}></RoleTab>
                 </div>
-                <div className={styles.inputs}>
+                <form className={styles.inputs} onSubmit={(e) => {
+                    e.preventDefault();
+                    handleLogin();
+                }}>
                     <InputField label="Email" type="email" placeholder="example@gmail.com"/>
                     <InputField label="Password" type="password" placeholder="******"/>
-                    <Button text="Log in" onClick={handleLogin}></Button>
-                </div>
+                    <Button text="Log in"></Button>
+                </form>
             </div>
             <div id="sign-up">
                 <p className="grey-text">Don't have an account?{" "}<Link to="/signup" className="info">Sign Up</Link></p>
