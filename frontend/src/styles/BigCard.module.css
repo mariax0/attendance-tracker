@@ -1,0 +1,89 @@
+.bigCard table thead th {
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.bigCard {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid #D9D9D9;
+    border-radius: 12px;
+    padding: 20px 0;
+    flex: 2;
+}
+
+.bigCard table {
+    border-collapse: collapse;
+    table-layout: fixed;
+    background-color: #F9FAFB;
+    border-top: 1px solid #E5E7EB;
+}
+
+.bigCard table th, td {
+    padding: 20px 0 20px 25px;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+    padding: 0 25px 30px 25px;
+}
+
+.sessionDetails {
+    display: flex;
+    gap: 30px;
+}
+
+.empty {
+    padding: 25px;
+}
+
+.sessionDate, .sessionTime {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.attendeeCol {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.attendeeCol p {
+    font-size: 14px;
+}
+
+.attendee {
+    border-top: 1px solid #E5E7EB;
+    background-color: #FFF;
+}
+
+.status.open {
+  color: #2CAD1B;
+}
+
+.status.closed {
+  color: #DC2626;
+}
+
+.status {
+  font-weight: 600;
+}
+
+@media (max-width: 825px) {
+    .profileIcon {
+        display: none !important;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    .email {
+        text-align: right;
+    }
+}

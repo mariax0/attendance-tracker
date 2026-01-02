@@ -1,5 +1,5 @@
 import Navbar from "../components/navbar/NavBar"
-import "../styles/Attendance.css"
+import styles from "../styles/Attendance.module.css"
 import SmallCard from '../components/attendance/SmallCard';
 import ToDoIcon from "../assets/todolist.svg?react"
 import CalendarIcon from "../assets/calendar-2.svg?react"
@@ -12,9 +12,6 @@ import { useState } from "react";
 function Attendance() {
     // for export
     const [selectedSessions, setSelectedSessions] = useState([]);
-    // for viewing attendees
-    const [activeSessionId, setActiveSessionId] = useState(null);
-
 
     // mock data for sessions
     const sessions = [
@@ -96,15 +93,19 @@ function Attendance() {
         }
     ];
 
+    // for viewing attendees
+    console.log(sessions[0]);
+    const [activeSessionId, setActiveSessionId] = useState(sessions[0].id);
+
     return (
-        <div className="content content-home">
+        <div className={styles.content}>
             <Navbar />
-            <div id="attendance">
-                <div id="heading">
+            <div className={styles.container}>
+                <div className={styles.heading}>
                     <h1>Attendance</h1>
                     <p className="grey-text">Track attendance across all sessions for <span>Web Tech Lecture</span></p>
                 </div>
-                <div id="first-row">
+                <div className={styles.firstRow}>
                     <SmallCard
                         Icon={CheckedIcon}
                         title="Total Sessions"
@@ -121,10 +122,10 @@ function Attendance() {
                         text="Oct 3 - Jan 14"
                     />           
                 </div>
-                <div id="second-row">
+                <div className={styles.secondRow}>
                     {selectedSessions.length > 0 && <Export selected={selectedSessions.length}></Export>}
                 </div>
-                <div id="third-row">
+                <div className={styles.thirdRow}>
                     <MediumCard 
                         sessions={sessions}
                         selectedSessions={selectedSessions}
