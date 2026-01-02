@@ -43,7 +43,7 @@ function BigCard({ session }) {
                         <tr key={participant.id} className="attendee">
                             <td>
                                 <div className="attendee-col">
-                                    <div id="avatar">{participant.name.charAt(0)}</div>
+                                    <div id="avatar" className="profile-icon">{participant.name.charAt(0)}</div>
                                     <p>{participant.name}</p>
                                 </div>
                             </td>
