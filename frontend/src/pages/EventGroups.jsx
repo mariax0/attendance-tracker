@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import Navbar from "../components/navbar/NavBar"
 import styles from "../styles/EventGroups.module.css"
 import SmallCard from '../components/attendance/SmallCard';
@@ -10,6 +11,8 @@ import Button from "../components/Button";
 import EventGroupCard from "../components/groups/EventGroupCard";
 
 function EventGroups() {
+    const navigate = useNavigate();
+
     // mock data for event groups
     const eventGroups = [
         {
@@ -55,10 +58,10 @@ function EventGroups() {
     const totalAttendees = eventGroups.reduce((sum, e) => sum + e.attendance, 0);
 
     return (
-        <div className="content content-home">
+        <div className={styles.content}>
             <Navbar />
-            <div id="attendance">
-                <div id="heading">
+            <div className={styles.container}>
+                <div className={styles.heading}>
                     <h1>Event Groups</h1>
                     <p className="grey-text">Manage and track attendance across all your event groups</p>
                 </div>
@@ -89,7 +92,7 @@ function EventGroups() {
                         <SearchIcon/>
                         <input type="text" placeholder="Search event groups..."></input>
                     </div>
-                    <Button className={styles.createBtn} text={"Create event group"}/>
+                    <Button className={styles.createBtn} text={"Create event group"} onClick={() => navigate("/create")}/>
                 </div>
                 <div className={styles.thirdRow}>
                     {eventGroups.map((group) => (
