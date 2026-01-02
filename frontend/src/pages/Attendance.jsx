@@ -99,7 +99,7 @@ function Attendance() {
     return (
         <div className="content content-home">
             <Navbar />
-            <div id="dashboard">
+            <div id="attendance">
                 <div id="heading">
                     <h1>Attendance</h1>
                     <p className="grey-text">Track attendance across all sessions for <span>Web Tech Lecture</span></p>

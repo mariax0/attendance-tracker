@@ -49,3 +49,9 @@
 .attendee {
     border-top: 1px solid #E5E7EB;
 }
+
+@media (max-width: 825px) {
+  .profile-icon {
+    display: none !important;
+  }
+}
