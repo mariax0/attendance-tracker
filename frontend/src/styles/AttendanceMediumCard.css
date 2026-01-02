@@ -29,6 +29,14 @@
     cursor: pointer;
 }
 
+.session:hover {
+    background-color: #E7E8F8;
+}
+
+.session.active {
+    background-color: #D6D8F8;
+}
+
 .session-details {
     display: flex;
     flex-direction: row;

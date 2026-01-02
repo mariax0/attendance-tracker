@@ -1,4 +1,4 @@
-import "../../styles/AttendanceBigCard.css"
+import styles from "../../styles/BigCard.module.css"
 import SmallCalendarIcon from "../../assets/small-calendar.svg?react"
 import EmailIcon from "../../assets/email.svg?react"
 import ClockIcon from "../../assets/clock.svg?react"
@@ -6,57 +6,59 @@ import ClockIcon from "../../assets/clock.svg?react"
 function BigCard({ session }) {
     if (!session || !session.attendees) {
         return (
-            <div className="big-card empty">
+            <div className={`${styles.bigCard} ${styles.empty}`}>
                 <p className="grey-text">No attendees for this session</p>
             </div>
         );
     }
 
     return (
-        <div className="attendance-big-card">
-            <div className="session-heading">
-                <div className="session-name">
+        <div className={styles.bigCard}>
+            <div className={styles.heading}>
+                <div className={styles.sessionName}>
                     <p>{session.eventName + " - Session " + session.id}</p>
                 </div>
-                <div className="session-details attendance-details">
-                    <div className="session-date">
+                <div className={styles.sessionDetails}>
+                    <div className={styles.sessionDate}>
                         <SmallCalendarIcon />
-                        <span>{session.date}</span>
+                        <span className="grey-text">{session.date}</span>
                     </div>
-                    <div className="session-time">
+                    <div className={styles.sessionTime}>
                         <ClockIcon />
-                        <span>{session.time}</span>
+                        <span className="grey-text">{session.time}</span>
                     </div>
-                    <span className="open">{session.status === "OPEN" ? "OPEN" : ""}</span>
+                    <span className={`${styles.status} ${session.status === "OPEN" ? `${styles.open}` : `${styles.closed}`}`}>
+                                    {session.status}
+                    </span>
                 </div>
             </div>
             <table>
                 <thead>
-                    <tr className="table-header">
+                    <tr>
                         <th>Attendee</th>
                         <th>Email</th>
-                        <th>Check-in time</th>
+                        <th className={styles.hide}>Check-in time</th>
                     </tr>
                 </thead>
                 <tbody>
                     {session.attendees.map((participant) => (
-                        <tr key={participant.id} className="attendee">
+                        <tr key={participant.id} className={styles.attendee}>
                             <td>
-                                <div className="attendee-col">
-                                    <div id="avatar" className="profile-icon">{participant.name.charAt(0)}</div>
+                                <div className={styles.attendeeCol}>
+                                    <div id="avatar" className={styles.profileIcon}>{participant.name.charAt(0)}</div>
                                     <p>{participant.name}</p>
                                 </div>
                             </td>
                             <td>
-                                <div className="attendee-col">
-                                    <EmailIcon />
+                                <div className={styles.attendeeCol}>
+                                    <EmailIcon className={styles.hide}/>
                                     <p className="grey-text">{participant.email}</p>
                                 </div>
                             </td>
                             <td>
-                                <div className="attendee-col">
-                                    <ClockIcon />
-                                    <p className="grey-text">{participant.checkIn}</p>
+                                <div className={styles.attendeeCol}>
+                                    <ClockIcon className={styles.hide}/>
+                                    <p className={`${styles.hide} grey-text email`}>{participant.checkIn}</p>
                                 </div>
                             </td>
                         </tr>
