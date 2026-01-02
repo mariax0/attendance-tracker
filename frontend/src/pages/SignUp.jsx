@@ -2,7 +2,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import Button from "../components/Button"
 import InputField from "../components/InputField"
 import RoleTab from "../components/RoleTab"
-import "../styles/Login.css"
 import BackArrow from '../components/BackArrow'
 
 function SignUp() {

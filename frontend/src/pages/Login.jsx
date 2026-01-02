@@ -3,7 +3,7 @@ import { useContext } from 'react'
 import Button from "../components/Button"
 import InputField from "../components/InputField"
 import RoleTab from "../components/RoleTab"
-import "../styles/Login.css"
+import styles from "../styles/Login.module.css"
 import Logo from "../components/Logo"
 import { UserContext } from '../context/UserContext'
 
@@ -20,27 +20,26 @@ function Login() {
     }
 
     return (
-        <div className="content" id="content-user">
-            <div id="sign-in">
-                <div id="headline">
+        <div className={styles.content}>
+            <div className={styles.signIn}>
+                <div className={styles.headline}>
                     <Logo />
-                    <div id="heading">
+                    <div className={styles.heading}>
                         <h1>Sign in to your account</h1>
                         <p className="grey-text">Enter your role, email and password to log in</p>
                     </div>
                 </div>
-                <div id="tabbing">
+                <div>
                     <RoleTab selectedRole={role} onChangeRole={setRole}></RoleTab>
                 </div>
-                <div id="inputs">
+                <div className={styles.inputs}>
                     <InputField label="Email" type="email" placeholder="example@gmail.com"/>
                     <InputField label="Password" type="password" placeholder="******"/>
-                    <p className="info">Forgot Password?</p>
                     <Button text="Log in" onClick={handleLogin}></Button>
                 </div>
             </div>
             <div id="sign-up">
-                <p id="sign-up-text" className="grey-text">Don't have an account?<Link to="/signup" className="info">Sign Up</Link></p>
+                <p className="grey-text">Don't have an account?{" "}<Link to="/signup" className="info">Sign Up</Link></p>
             </div>
         </div>
     )
