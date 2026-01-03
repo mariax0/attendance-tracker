@@ -19,6 +19,7 @@ nav {
     display: flex;
     flex-direction: row;
     gap: 30px;
+    align-items: center;
 }
 
 .menu-link {
@@ -31,4 +32,10 @@ nav {
 .create-btn {
     width: 27%;
     height: 40px;
+}
+
+@media (max-width: 650px) {
+  .hide {
+    display: none;
+  }
 }

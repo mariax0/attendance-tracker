@@ -9,6 +9,7 @@ import DashboardBigCard from '../components/dashboard/DashboardBigCard';
 import DashboardMediumCard from '../components/dashboard/DashboardMediumCard';
 import { useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import Button from "../components/Button";
 
 function Dashboard() {
     const location = useLocation();
@@ -80,6 +81,10 @@ function Dashboard() {
                     <p className="grey-text">Here's what's happening today</p>
                 </div>
                 <div className={styles.firstRow}>
+                    <div className={`${styles.hide} ${styles.buttons}`}>
+                        <Button text="Create new event group" onClick={() => navigate("/create")}></Button>
+                        <Button text="Event groups" onClick={() => navigate("/event-groups")}></Button>
+                    </div>
                     <DashboardSmallCard
                         Icon={CheckedIcon}
                         title="Active Events"

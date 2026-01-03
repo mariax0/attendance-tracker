@@ -51,7 +51,13 @@
   top: 70px;
 }
 
-@media (max-width: 825px) {
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 650px) {
   .firstRow, .secondRow {
     flex-direction: column;
   }
@@ -61,3 +67,9 @@
   }
 }
 
+
+@media (min-width: 650px) {
+  .hide {
+    display: none;
+  }
+}
