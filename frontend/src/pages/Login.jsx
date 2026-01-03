@@ -13,8 +13,10 @@ function Login() {
 
     const handleLogin = () => {
         if (role === "participant") {
+            setRole("participant");
             navigate("/home");
         } else if (role === "host") {
+            setRole("host");
             navigate("/dashboard");
         }
     }
